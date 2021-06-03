@@ -20,6 +20,9 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     var counter = Provider.of<Counter>(context).getCounter;
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

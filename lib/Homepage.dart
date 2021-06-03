@@ -21,10 +21,16 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     var counter = Provider.of<Counter>(context).getCounter;
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Home Page'),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              IconButton(icon: Icon(Icons.home), onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPage()));
+              }),
               Text(
                 'You have pushed the button this many times:',
               ),
@@ -39,17 +45,6 @@ class _HomepageState extends State<Homepage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FloatingActionButton(
-              onPressed: () => () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
-                );
-              },
-              tooltip: 'Increment',
-              child: Icon(Icons.home),
-            ),
-            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () => _incrementCounter(context),
               tooltip: 'Increment',
